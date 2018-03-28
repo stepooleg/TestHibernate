@@ -7,7 +7,8 @@ import DbService.DataSets.UserDataSets;
 public class Main {
     public static void main(String[] args) {
         DBService dbService = new DBService();
-        dbService.printConnectInfo();
+        String status = dbService.getLocalStatus();
+        System.out.println("Status: " + status);
 
         try {
             long userId = dbService.addUser("tully");
